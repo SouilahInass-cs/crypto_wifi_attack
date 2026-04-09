@@ -1,104 +1,207 @@
-🚀 WPA/WPA2 Offline Brute Force Simulation
+<div align="center">
 
+# 🔐 WPA/WPA2 Offline Brute Force Simulation
 
+<img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/Purpose-Educational-orange?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge"/>
 
+<br/>
 
+> **An educational simulation of a WPA/WPA2 offline brute force attack demonstrating how password hashing and hash comparison work in practice.**
 
+<br/>
 
-📌 Overview
+```
+⚠️  FOR EDUCATIONAL & LAB ENVIRONMENTS ONLY — DO NOT USE ON UNAUTHORIZED SYSTEMS  ⚠️
+```
 
-This project is an educational simulation of a WPA/WPA2 offline brute force attack.
+</div>
 
-It demonstrates how attackers can recover passwords from a captured handshake without interacting with the network, using hash comparison techniques.
+---
 
-⚠️ This project is strictly for educational and lab environments only.
+## 📌 Overview
 
-🎯 Objectives
-Understand how WPA/WPA2 authentication works
-Learn how offline brute force attacks operate
-Demonstrate the importance of strong passwords
-Simulate password cracking using hashing techniques
-Practice secure coding and cybersecurity fundamentals
-🧠 How It Works
-A password is selected as the "target"
-The password is hashed using SHA-256
-This hash simulates a captured WPA/WPA2 handshake
-A brute force script:
-Generates candidate passwords
-Hashes each candidate
-Compares it with the target hash
-When a match is found → password is recovered
-📁 Project Structure
+This project is an **educational simulation** of a WPA/WPA2 offline brute force attack. It demonstrates how attackers can recover passwords from a captured handshake **without interacting with the network**, using SHA-256 hash comparison techniques.
+
+It is designed for students, researchers, and cybersecurity enthusiasts who want to understand real attack vectors in a **safe, controlled environment**.
+
+---
+
+## 🎯 Objectives
+
+- Understand how WPA/WPA2 authentication works
+- Learn how offline brute force attacks operate
+- Demonstrate the critical importance of strong passwords
+- Simulate password cracking using hashing techniques
+- Practice secure coding and cybersecurity fundamentals
+
+---
+
+## 🧠 How It Works
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      SIMULATION WORKFLOW                        │
+│                                                                 │
+│  1. Target password selected                                    │
+│       ↓                                                         │
+│  2. Password hashed with SHA-256  →  "Captured Handshake"      │
+│       ↓                                                         │
+│  3. Brute force script runs:                                    │
+│       • Generates candidate passwords                           │
+│       • Hashes each candidate                                   │
+│       • Compares hash to target hash                            │
+│       ↓                                                         │
+│  4. Match found  →  ✅ Password Recovered!                      │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📁 Project Structure
+
+```
 crypto_wifi_attack/
 │
 ├── demo/
 │   ├── 1_setup_handshake.py      # Generates simulated handshake (hash)
-│   ├── 2_bruteforce_attack.py    # Performs brute force attack
-│   ├── utils.py                  # Helper functions
+│   ├── 2_bruteforce_attack.py    # Performs the brute force attack
+│   └── utils.py                  # Helper / utility functions
 │
 └── README.md
-⚙️ Requirements
-Python 3.x
-No external dependencies required
-▶️ Installation & Usage
-1. Clone the repository
+```
+
+---
+
+## ⚙️ Requirements
+
+| Requirement | Details |
+|---|---|
+| **Python** | 3.x or higher |
+| **Dependencies** | None — standard library only |
+| **OS** | Windows / Linux / macOS |
+
+---
+
+## ▶️ Installation & Usage
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/your-username/crypto_wifi_attack.git
 cd crypto_wifi_attack/demo
-2. Run handshake generation
+```
+
+### 2. Generate the simulated handshake
+
+```bash
 python 1_setup_handshake.py
-3. Run brute force attack
+```
+
+### 3. Run the brute force attack
+
+```bash
 python 2_bruteforce_attack.py
-🧪 Demo Workflow
-Step 1 → Generate a hashed password (simulated handshake)
-Step 2 → Run brute force attack
-Step 3 → Observe password recovery through hash comparison
-🔐 Key Concepts
-Hashing (SHA-256): One-way cryptographic function
-Offline Attack: No interaction with the target system
-Brute Force: Systematic guessing of possible passwords
-Handshake Simulation: Represents captured authentication data
-📊 Why This Matters
-WPA/WPA2 networks rely on password strength
-Weak passwords are vulnerable to brute force attacks
-Offline attacks bypass rate limiting and lockout protections
-Strong, random passwords significantly increase security
-⚠️ Ethical & Legal Notice
+```
 
-This project is intended strictly for educational purposes in controlled environments.
+---
 
-✔ Allowed:
+## 🧪 Demo Workflow
 
-Personal learning
-Academic demonstrations
-Authorized lab environments
+```
+Step 1  →  Generate a hashed password (simulates captured handshake)
+Step 2  →  Launch the brute force attack script
+Step 3  →  Observe password recovery via hash comparison
+```
 
-❌ Not allowed:
+---
 
-Attacking systems you do not own
-Unauthorized penetration testing
-Real-world malicious use
-🧾 Author
-Project created for cybersecurity learning and academic demonstration.
-⭐ Future Improvements
-Add GPU acceleration simulation
-Integrate wordlist-based attacks
-Improve attack performance visualization
-Add GUI interface for demonstrations
-📌 Notes
-Designed for clarity and educational explanation
-Keep the project lightweight and easy to run
-No external dependencies required
-🔥 Comment faire les mises à jour sur GitHub (important)
+## 🔐 Key Concepts
 
-Après modification du README ou du code :
+| Concept | Description |
+|---|---|
+| **Hashing (SHA-256)** | One-way cryptographic function — cannot be reversed |
+| **Offline Attack** | No interaction with the live target network |
+| **Brute Force** | Systematic enumeration of all possible passwords |
+| **Handshake Simulation** | Represents captured WPA/WPA2 authentication data |
 
+---
+
+## 📊 Why This Matters
+
+- WPA/WPA2 network security relies **entirely** on password strength
+- Weak passwords are highly vulnerable to offline brute force attacks
+- Offline attacks **bypass rate limiting and lockout protections**
+- Strong, random passwords dramatically increase the time required to crack
+
+> 💡 *A 12-character random password can take thousands of years to brute force — a 6-character simple password can fall in seconds.*
+
+---
+
+## ⚠️ Ethical & Legal Notice
+
+<div align="center">
+
+| ✅ **Allowed** | ❌ **Not Allowed** |
+|---|---|
+| Personal learning & research | Attacking systems you don't own |
+| Academic demonstrations | Unauthorized penetration testing |
+| Authorized lab environments | Real-world malicious use of any kind |
+
+</div>
+
+> This project is intended **strictly for educational purposes** in controlled environments. The author assumes **no responsibility** for any misuse of this material.
+
+---
+
+## 🔄 Git Workflow — Pushing Updates to GitHub
+
+After modifying code or the README:
+
+```bash
 git add .
 git commit -m "Update README and improvements"
 git push
-💡 Pro tip (très important)
+```
 
-Si tu modifies seulement le README :
+If you only modified the README:
 
+```bash
 git add README.md
 git commit -m "Improve README documentation"
 git push
+```
+
+---
+
+## ⭐ Future Improvements
+
+- [ ] Add GPU acceleration simulation
+- [ ] Integrate wordlist-based (dictionary) attacks
+- [ ] Improve attack performance visualization
+- [ ] Add a GUI interface for demonstrations
+- [ ] Add benchmark mode to measure speed
+
+---
+
+## 👤 Author
+
+**Project created for cybersecurity learning and academic demonstration.**
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-your--username-181717?style=for-the-badge&logo=github)](https://github.com/your-username)
+
+<br/>
+
+*⭐ If you found this project useful, please consider giving it a star!*
+
+</div>
+
+---
+
+<div align="center">
+<sub>Built with 🔒 for educational cybersecurity awareness</sub>
+</div>
