@@ -1,31 +1,70 @@
 # WPA/WPA2 Offline Brute Force Simulation
 
-## 🎯 Objective
-This project simulates a WPA/WPA2 offline brute force attack in a controlled lab environment.
+In real WPA/WPA2 security:
 
-## 🧠 Concept
-In real WPA/WPA2 networks:
 - Passwords are never tested directly online
 - Attackers capture a handshake
-- They perform offline brute force by testing password candidates
+- They perform offline brute force attacks
+- Each password guess is validated locally using cryptographic hashes
 
-## 🔬 Simulation
+---
+
+## 🔬 Simulation Overview
+
+This project simulates the process:
+
 - A password is converted into a SHA-256 hash (simulated handshake)
-- A brute force script attempts to recover the password
-- The attack compares hashes instead of plaintext
+- A brute force script tries to recover the original password
+- Instead of comparing plaintext passwords, hashes are compared
 
-## 📁 Structure
-- demo/1_setup_handshake.py → generate handshake
-- demo/2_bruteforce_attack.py → perform brute force
-- demo/utils.py → helper functions
+---
+
+## 📁 Project Structure
+
+
+demo/
+├── 1_setup_handshake.py # Generates a simulated handshake (hash)
+├── 2_bruteforce_attack.py # Performs brute force attack
+├── utils.py # Helper functions
+
+
+---
 
 ## ⚙️ Requirements
+
 - Python 3.x
 - No external libraries required
 
+---
+
 ## ▶️ How to Run
+
+Step 1: Generate the handshake
 
 ```bash
 cd demo
 python 1_setup_handshake.py
+
+Step 2: Run the brute force attack
+
 python 2_bruteforce_attack.py
+📌 How It Works
+A password is hashed using SHA-256
+The hash simulates a captured WPA/WPA2 handshake
+The brute force script:
+Generates candidate passwords
+Hashes each candidate
+Compares it with the target hash
+If a match is found, the password is recovered
+## 🎯 Learning Goals
+Understand how offline brute force attacks work
+Learn the role of cryptographic hashing
+Understand why strong passwords matter
+See why offline attacks are powerful (no rate limiting)
+⚠️ Security Note
+
+Real-world WPA/WPA2 attacks involve:
+
+Capturing handshakes using specialized tools
+Using large wordlists (millions of passwords)
+GPU acceleration for faster hashing
