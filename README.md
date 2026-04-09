@@ -192,7 +192,7 @@ git push
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-your--username-181717?style=for-the-badge&logo=github)](https://github.com/SouilahInass-cs)
+[![GitHub](https://img.shields.io/badge/GitHub-SouilahInass--cs-181717?style=for-the-badge&logo=github)](https://github.com/SouilahInass-cs)
 
 <br/>
 
